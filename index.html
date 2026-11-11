@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>城主領地·經營</title>
+<meta name="theme-color" content="#20301c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="領地經營">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+<div id="topbar">
+  <span id="title">城主領地·經營</span>
+  <div id="resbar"></div>
+  <span id="info"></span>
+  <span class="spacer"></span>
+  <button id="btnHide" title="隱藏建築（整地用，H）"><span class="ic">👁</span><span class="lbl">建築</span></button>
+  <select id="selSeason" title="季節主題">
+    <option value="spring">春</option>
+    <option value="summer">夏</option>
+    <option value="autumn">秋</option>
+    <option value="winter">冬</option>
+  </select>
+  <button id="btnShop">商店</button>
+  <button id="btnLayoutSave" title="布置存檔">💾 布置存檔</button>
+  <button id="btnClear">清空</button>
+</div>
+<canvas id="game"></canvas>
+<div id="shop" hidden></div>
+<div id="tplMenu" hidden></div>
+<div id="techPanel" hidden></div>
+<div id="pendBar" hidden></div>
+<div id="toolbar"></div>
+<button id="modeFloat" type="button" hidden></button>
+<script src="js/features.js"></script>
+<script src="js/data.js"></script>
+<script src="js/units.js"></script>
+<script src="js/wallskin.js"></script>
+<script src="js/theme_skin.js"></script>
+<script src="js/fx_tech_data.js"></script>
+<script src="js/fxpack.js"></script>
+<script src="js/progdata.js"></script>
+<script src="js/cityonly.js"></script>
+<script src="js/cityscore_data.js"></script>
+<script src="js/cityscore.js"></script>
+<script src="js/goodsdata.js"></script>
+<script src="js/fx_goods_data.js"></script>
+<script src="js/goods.js"></script>
+<script src="js/bmcdata.js"></script>
+<script src="js/bmc.js"></script>
+<script src="js/mktbuy.js"></script>
+<script src="js/techtree_data.js"></script>
+<script src="js/nolevel_data.js"></script>
+<script src="js/techtree_simple_data.js"></script>
+<script src="js/citysimple.js"></script>
+<script src="js/citytech.js"></script>
+<script src="js/fishdata.js"></script>
+<script src="js/map.js"></script>
+<script src="js/mapio.js"></script>
+<script src="js/prog.js"></script>
+<script src="js/tech.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/templates112.js"></script>
+<script src="js/path.js"></script>
+<script src="js/perf.js"></script>
+<script src="js/art.js"></script>
+<script src="js/glr.js"></script>
+<script src="js/art_objects.js"></script>
+<script src="js/art_units.js"></script>
+<script src="js/art_deco1.js"></script>
+<script src="js/art_deco2.js"></script>
+<script src="js/art_deco3.js"></script>
+<script src="js/art_deco4.js"></script>
+<script src="js/art_deco5.js"></script>
+<script src="js/art_nl.js"></script>
+<script src="js/art_port.js"></script>
+<script src="js/art_town.js"></script>
+<script src="js/art_set.js"></script>
+<script src="js/combos.js"></script>
+<script src="js/art_traffic.js"></script>
+<script src="js/art_wallskin.js"></script>
+<script src="js/art_theme.js"></script>
+<script src="js/ext_sprites_data.js"></script>
+<script src="js/ext_sprites.js"></script>
+<script src="js/terrain_tex.js"></script>
+<script src="js/render.js"></script>
+<script src="js/fishdraw.js"></script>
+<script src="js/fishing.js"></script>
+<script src="js/lifedata.js"></script>
+<script src="js/citylife.js"></script>
+<script src="js/ethnic_data.js"></script>
+<script src="js/crowdparts.js"></script>
+<script src="js/crowdparts_fantasy.js"></script>
+<script src="js/citytraffic.js"></script>
+<script src="js/gatherdata.js"></script>
+<script src="js/citygather.js"></script>
+<script src="js/traffic_sprites.js"></script>
+<script src="js/talentpatrol.js"></script>
+<script src="js/chainvis.js"></script>
+<script src="js/cityfx_data.js"></script>
+<script src="js/cityfx.js"></script>
+<script src="js/objcat.js"></script>
+<script src="js/uiicons.js"></script>
+<script src="js/cityadvisor_data.js"></script>
+<script src="js/cityadvisor.js"></script>
+<script src="js/nextstep_data.js"></script>
+<script src="js/nextstep.js"></script>
+<script src="js/tutorial_data.js"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/panorama.js"></script>
+<script src="js/audiodata.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/audiocache.js"></script>
+<script src="js/bgm.js"></script>
+<script src="js/ambient.js"></script>
+<script src="js/mymusic.js"></script>
+<script src="js/recorder.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/nl_objects.js"></script>
+<script src="js/nl_style_objects.js"></script>
+<script src="js/art_tavern.js"></script>
+<script src="js/art_gather.js"></script>
+<script src="js/panelmgr.js"></script>
+<script src="js/caravan_goods.js"></script>
+<script src="js/caravan.js"></script>
+<script src="js/caravanui.js"></script>
+<script src="js/caravan_vis.js"></script>
+<script src="js/buildpreview.js"></script>
+<script src="js/techui.js"></script>
+<script src="js/search.js"></script>
+<script src="js/saveslots.js"></script>
+<script src="js/savesui.js"></script>
+<script src="js/worldpacks.js"></script>
+<script src="js/worldwizard.js"></script>
+<script src="js/settingsui.js"></script>
+<script src="js/progui.js"></script>
+<script src="js/terrain_live.js"></script>
+<script src="js/lordhallui.js"></script>
+<script src="js/cityscoreui.js"></script>
+<script src="js/cityadvisorui.js"></script>
+<script src="js/nextstepui.js"></script>
+<script src="js/guide.js"></script>
+<script src="js/mapedit.js"></script>
+<script src="js/fishui.js"></script>
+<script src="js/petdata.js"></script>
+<script src="js/pet.js"></script>
+<script src="js/petdraw.js"></script>
+<script src="js/petui.js"></script>
+<script src="js/interior.js"></script>
+<script src="js/tavern_data.js"></script>
+<script src="js/tavern_scene.js"></script>
+<script src="js/tavern_i1.js"></script>
+<script src="js/interiors_pack1_data.js"></script>
+<script src="js/interiors_pack1.js"></script>
+<script src="js/interiors_pack2_data.js"></script>
+<script src="js/interiors_pack2.js"></script>
+<script src="js/bldtag.js"></script>
+<script src="js/minimap.js"></script>
+<script src="js/fx_text_data.js"></script>
+<script src="js/fx_text.js"></script>
+<script src="js/main.js"></script>
+<script src="js/installtip.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>
